@@ -5,7 +5,6 @@ class ApplicationController < ActionController::API
   
   #Authorization System Pundit
   include Pundit
-  protect_from_forgery
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
