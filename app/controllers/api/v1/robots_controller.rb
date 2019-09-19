@@ -11,6 +11,19 @@ class Api::V1::RobotsController < Api::V1::BaseController
   def show
   end
 
+  #POST /api/v1/robots #authenticated
+  def create
+    @robot = Robot.new(robot_params)
+    @robot.user = current_user
+    authorize @robot
+    if @robot.save
+      render :show, status: :remember_created_at
+    else
+      render_error
+    end
+
+  end
+
   #PATCH /api/v1/robots/:id # authenticated
   def update
     if @robot.update(robot_params)
