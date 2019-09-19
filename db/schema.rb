@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_095311) do
+ActiveRecord::Schema.define(version: 2019_09_19_103346) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "armors", force: :cascade do |t|
+    t.string "type"
+    t.string "serial_number"
+    t.bigint "robot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["robot_id"], name: "index_armors_on_robot_id"
+  end
 
   create_table "robots", force: :cascade do |t|
     t.string "name"
@@ -46,6 +56,7 @@ ActiveRecord::Schema.define(version: 2019_09_19_095311) do
     t.index ["robot_id"], name: "index_weapons_on_robot_id"
   end
 
+  add_foreign_key "armors", "robots"
   add_foreign_key "robots", "users"
   add_foreign_key "weapons", "robots"
 end
