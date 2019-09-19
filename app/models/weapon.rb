@@ -6,6 +6,6 @@ class Weapon < ApplicationRecord
   #Validations
   validates :type, presence: true, inclusion: { in: %w(laser code acid map),
     message: "%{value} is not a valid type" }
-  validates :serial_number, format: { with: /^W+\d{6}$/, 
+  validates :serial_number, format: { with: /\AW+\d{6}\z/, 
     message: "Please enter keywords in correct format (letter (W) + 6 digits)"}
 end
