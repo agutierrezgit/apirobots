@@ -1,11 +1,9 @@
 class ApplicationController < ActionController::API
-    
   #Devise helpers to set up controller with user authentication
   before_action :authenticate_user!
   
   #Authorization System Pundit
   include Pundit
-  protect_from_forgery
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
