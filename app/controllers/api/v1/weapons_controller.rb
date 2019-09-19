@@ -21,14 +21,14 @@ class Api::V1::WeaponsController < Api::V1::BaseController
 
   end
 
-#   #PATCH /api/v1/robots/:id/weapons/:id # authenticated
-#   def update
-#     if @weapon.update(weapon_params)
-#       render :show
-#     else
-#       render_error
-#     end
-#   end
+  #PATCH /api/v1/robots/:id/weapons/:id # authenticated
+  def update
+    if @weapon.update(weapon_params)
+      render :show
+    else
+      render_error
+    end
+  end
 
 #   #DELETE /api/v1/robots/:id/weapons/:id # authenticated
 #   def destroy
