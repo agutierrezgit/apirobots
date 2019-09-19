@@ -2,9 +2,14 @@ class Api::V1::RobotsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]  
   before_action :set_robot, only: [ :show, :update, :destroy]
   
-  #GET /api/v1/robots  #unauthenticated
+  #GET /api/v1/robots or #GET /api/v1/query={query}  #unauthenticated
+
   def index
-    @robots = policy_scope(Robot)
+    if params[:query].present?
+      @robots = policy_scope(Robot.custom_search(params[:query]))
+    else
+      @robots = policy_scope(Robot)
+    end
   end
 
   #GET /api/v1/robots/:id

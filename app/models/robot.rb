@@ -14,12 +14,13 @@ class Robot < ApplicationRecord
 
   #Search
   include PgSearch::Model
-  pg_search_scope :global_search,
-    against: [ :robot_type ],
+  pg_search_scope :custom_search,
+    against: :robot_type,
     associated_against: {
-      weapon: [ :weapon_type ]
-      armor: [ :armor_type ]
+      weapons: :weapon_type,
+      armors: :armor_type
     },
+
     using: {
       tsearch: { prefix: true }
     }
