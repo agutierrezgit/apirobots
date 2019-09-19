@@ -1,3 +1,1 @@
-json.array! @weapons do |weapon|
-  json.extract! weapon, :id, :name, :weapon_type, :serial_number
-end
+json.(@weapon, :id, :weapon_type, :serial_number)
