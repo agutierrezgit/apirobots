@@ -14,4 +14,8 @@ class RobotPolicy < ApplicationPolicy
     #Only user owner can update the robot records
     record.user == user
   end
+
+  def create?
+    update?
+  end
 end
