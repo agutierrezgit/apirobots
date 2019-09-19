@@ -11,7 +11,11 @@ class Api::V1::RobotsController < Api::V1::BaseController
   end
 
   def update
-    @robot = Robot.update(robot_params)
+    if @robot = Robot.update(robot_params)
+      render :show
+    else
+      render_error
+    end
   end
 
   private
@@ -23,6 +27,11 @@ class Api::V1::RobotsController < Api::V1::BaseController
 
   def robot_params
     params.require(:robot).permit(:name, :robot_type, :serial_number)
+  end
+
+  def render_error
+    render json: { errors: @robot.errors.full_messages },
+    status: :unprocessable_entity
   end
 
 end
