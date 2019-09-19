@@ -1,1 +1,1 @@
-json.(@weapon, :id, :weapon_type, :serial_number)
+json.(@weapon, :id, :weapon_type, :serial_number, :robot_id)
