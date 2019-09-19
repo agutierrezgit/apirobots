@@ -1,5 +1,5 @@
 class Api::V1::RobotsController < Api::V1::BaseController
-    before_action: :set_robot, only: [:show]
+    before_action :find_robot, only: [ :show]
   
   #GET /api/v1/robots  #unauthenticated
   def index
@@ -14,7 +14,7 @@ class Api::V1::RobotsController < Api::V1::BaseController
 
   private
 
-  def set_robot
+  def find_robot
     @robot = Robot.find(params[:id])
   end
 
