@@ -30,11 +30,11 @@ class Api::V1::WeaponsController < Api::V1::BaseController
     end
   end
 
-#   #DELETE /api/v1/robots/:id/weapons/:id # authenticated
-#   def destroy
-#     @weapon.destroy
-#     head :no_content
-#   end
+  #DELETE /api/v1/robots/:id/weapons/:id # authenticated
+  def destroy
+    @weapon.destroy
+    head :no_content
+  end
 
   private
 
