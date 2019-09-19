@@ -4,21 +4,22 @@ class Api::V1::WeaponsController < Api::V1::BaseController
     
   #GET /api/v1/robots/:id/weapons/:id
   def show
-    skip_authorization
   end
 
-#   #POST /api/v1/robots/:id/weapons #authenticated
-#   def create
-    
-#     @weapon = Weapon.new(weapon_params)
-#     @weapon.user = current_user
-#     if @weapon.save
-#       render :show, status: :remember_created_at
-#     else
-#       render_error
-#     end
+  #POST /api/v1/robots/:id/weapons #authenticated
+  
+  def create
+    @robot = Robot.find(params[:robot_id])
+    @weapon = Weapon.new(weapon_params)
+    @weapon.robot = @robot
+    authorize @weapon
+    if @weapon.save
+      render :show, status: :created
+    else
+      render_error
+    end
 
-#   end
+  end
 
 #   #PATCH /api/v1/robots/:id/weapons/:id # authenticated
 #   def update
@@ -35,19 +36,20 @@ class Api::V1::WeaponsController < Api::V1::BaseController
 #     head :no_content
 #   end
 
-#   private
+  private
 
   def set_weapon
     @weapon = Weapon.find(params[:id])
+    authorize @weapon # For pundit
   end
 
-#   def weapon_params
-#     params.require(:weapon).permit(:name, :weapon_type, :serial_number)
-#   end
+  def weapon_params
+    params.require(:weapon).permit(:weapon_type, :serial_number)
+  end
 
-#   def render_error
-#     render json: { errors: @weapon.errors.full_messages },
-#     status: :unprocessable_entity
-#   end
+  def render_error
+    render json: { errors: @weapon.errors.full_messages },
+    status: :unprocessable_entity
+  end
 
 end

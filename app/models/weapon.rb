@@ -2,6 +2,7 @@ class Weapon < ApplicationRecord
   
   #Associations
   belongs_to :robot
+  belongs_to :user, optional: true
 
   #Validations
   validates :weapon_type, presence: true, inclusion: { in: %w(laser code acid map),

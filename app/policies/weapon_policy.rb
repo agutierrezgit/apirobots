@@ -12,16 +12,16 @@ class WeaponPolicy < ApplicationPolicy
 
   def update?
     #Only user owner can update the weapons records.
-    record.user == user
+    record.robot.user == user
   end
 
   def create?
-    #Any looged user can create a weapons.
-    !user.nil?
+    #Only user owner can create the weapons records.
+    update?
   end
 
   def destroy?
-    #Only user owner can update the weapons records as #update
+    #Only user owner can destroy the weapons records as #update
     update?
   end
 end
