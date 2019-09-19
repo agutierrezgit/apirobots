@@ -33,6 +33,8 @@ class Api::V1::RobotsController < Api::V1::BaseController
     end
   end
 
+  #DELETE /api/v1/robots/:id # authenticated
+
   private
 
   def set_robot
