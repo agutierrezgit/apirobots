@@ -1,5 +1,5 @@
 class Api::V1::RobotsController < Api::V1::BaseController
-  before_action :find_robot, only: [ :show]
+  before_action :set_robot, only: [ :show, :update]
   
   #GET /api/v1/robots  #unauthenticated
   def index
@@ -10,11 +10,15 @@ class Api::V1::RobotsController < Api::V1::BaseController
   def show
   end
 
+  def update
+  
+  end
+
   private
 
-  def find_robot
+  def set_robot
     @robot = Robot.find(params[:id])
-    authorize @robot #For PUndit
+    authorize @robot #For Pundit
   end
 
 end
