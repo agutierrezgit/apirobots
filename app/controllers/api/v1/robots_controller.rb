@@ -17,7 +17,7 @@ class Api::V1::RobotsController < Api::V1::BaseController
     @robot.user = current_user
     authorize @robot
     if @robot.save
-      render :show, status: :remember_created_at
+      render :show, status: :created
     else
       render_error
     end
