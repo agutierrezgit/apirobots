@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_140946) do
+ActiveRecord::Schema.define(version: 2019_09_19_141258) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "armors", force: :cascade do |t|
-    t.string "type"
+    t.string "armor_type"
     t.string "serial_number"
     t.bigint "robot_id"
     t.datetime "created_at", null: false
