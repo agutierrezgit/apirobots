@@ -1,0 +1,1 @@
+json.(@weapon, :id, :weapon_type, :serial_number)

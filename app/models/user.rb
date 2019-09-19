@@ -8,4 +8,6 @@ class User < ApplicationRecord
 
   #Associations
   has_many :robots, dependent: :destroy
+  has_many :weapons, through: :robots
+  has_many :armors, through: :robots
 end
