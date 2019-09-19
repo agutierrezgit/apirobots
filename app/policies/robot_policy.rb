@@ -5,17 +5,25 @@ class RobotPolicy < ApplicationPolicy
     end 
   end
 
-  #Authorize show view
+  #Everyone can see the robots.
   def show?
     true
   end
 
   def update?
-    #Only user owner can update the robot records
+    #Only user owner can update the robot records.
     record.user == user
   end
 
   def create?
+    #Any looged user can create a robot.
+    !user.nil?
+  end
+
+  def destroy?
+    #Only user owner can update the robot records as #update
     update?
   end
+
 end
+
