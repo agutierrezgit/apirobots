@@ -21,7 +21,7 @@ class RobotPolicy < ApplicationPolicy
   end
 
   def destroy?
-    #Only user owner can update the robot records as #update
+    #Only user owner can destroy the robot records as #update
     update?
   end
 
