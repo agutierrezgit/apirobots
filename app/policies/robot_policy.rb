@@ -2,10 +2,11 @@ class RobotPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
-    end
+    end 
+  end
 
-    def show?
+  #Authorize show view
+  def show?
       true
-    end
   end
 end
