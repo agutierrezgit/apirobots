@@ -11,8 +11,9 @@ class Api::V1::RobotsController < Api::V1::BaseController
   def show
   end
 
+  #PATCH /api/v1/robots/:id # authenticated
   def update
-    if @robot = Robot.update(robot_params)
+    if @robot.update(robot_params)
       render :show
     else
       render_error
