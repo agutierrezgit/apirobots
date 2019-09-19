@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   #Associations
-  has_many : robots, dependent: :destroy
+  has_many :robots, dependent: :destroy
 end
