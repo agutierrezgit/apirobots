@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_19_094332) do
+ActiveRecord::Schema.define(version: 2019_09_19_095311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,5 +37,15 @@ ActiveRecord::Schema.define(version: 2019_09_19_094332) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "weapons", force: :cascade do |t|
+    t.string "type"
+    t.string "serial_number"
+    t.bigint "robot_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["robot_id"], name: "index_weapons_on_robot_id"
+  end
+
   add_foreign_key "robots", "users"
+  add_foreign_key "weapons", "robots"
 end
