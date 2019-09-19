@@ -1,6 +1,6 @@
 class Api::V1::RobotsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]  
-  before_action :set_robot, only: [ :show, :update]
+  before_action :set_robot, only: [ :show, :update, :destroy]
   
   #GET /api/v1/robots  #unauthenticated
   def index
@@ -34,6 +34,10 @@ class Api::V1::RobotsController < Api::V1::BaseController
   end
 
   #DELETE /api/v1/robots/:id # authenticated
+  def destroy
+    @robot.destroy
+    head :no_content
+  end
 
   private
 
