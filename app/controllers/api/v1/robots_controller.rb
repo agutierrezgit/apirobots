@@ -11,7 +11,7 @@ class Api::V1::RobotsController < Api::V1::BaseController
   end
 
   def update
-  
+    @robot = Robot.update(robot_params)
   end
 
   private
@@ -19,6 +19,10 @@ class Api::V1::RobotsController < Api::V1::BaseController
   def set_robot
     @robot = Robot.find(params[:id])
     authorize @robot #For Pundit
+  end
+
+  def robot_params
+    params.require(:robot).permit(:name, :robot_type, :serial_number)
   end
 
 end
