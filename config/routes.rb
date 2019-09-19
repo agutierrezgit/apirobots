@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :robots, only: [ :index, :show, :update, :create, :destroy ] do
-        resources :weapons, only: [ :index, :show, :update, :create, :destroy ]
+        resources :weapons, only: [:show, :update, :create, :destroy ]
       end
     end
   end
