@@ -7,4 +7,7 @@ class Robot < ApplicationRecord
 
   #Validations
   validates :name, presence: true, uniqueness: true
+  validates :type, inclusion: { in: %w(hackerobot protectobot tacticrobot),
+    message: "%{value} is not a valid type" }
+
 end
