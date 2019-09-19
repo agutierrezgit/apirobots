@@ -1,0 +1,1 @@
+json.(@armor, :id, :armor_type, :serial_number, :robot_id)
