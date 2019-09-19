@@ -7,6 +7,11 @@ class RobotPolicy < ApplicationPolicy
 
   #Authorize show view
   def show?
-      true
+    true
+  end
+
+  def update?
+    #Only user owner can update the robot records
+    record.user == user
   end
 end
