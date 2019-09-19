@@ -19,5 +19,11 @@ class RobotPolicy < ApplicationPolicy
     #Any looged user can create a robot.
     !user.nil?
   end
+
+  def destroy?
+    #Only user owner can update the robot records as #update
+    update?
+  end
+
 end
 
