@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_user!
+  protect_from_forgery unless: -> { request.format.json? }
   
   #Authorization System Pundit
   include Pundit

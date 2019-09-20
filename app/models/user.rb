@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  # Token Authenticatable
   acts_as_token_authenticatable
   
   # Include default devise modules. Others available are:
