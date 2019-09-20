@@ -1,6 +1,7 @@
-class Api::V1::SessionsController < Api::V1::BaseController
+class Api::V1::UsersController < Api::V1::BaseController
     
-    def create
+    #POST /api/v1/users
+    def show
        @user = User.find_by_email(params[:email]) 
        skip_authorization
 
@@ -10,9 +11,12 @@ class Api::V1::SessionsController < Api::V1::BaseController
             render_error
         end
     end
-
+    
+    #DELETE /api/v1/users/:id
     def destroy
-   
+        @user = User.find(params[:id])
+        @user.destroy
+        head :no_content
     end
 
     private
