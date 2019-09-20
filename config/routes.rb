@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
-  devise_for :users   
+ 
   root to: 'api/v1/robots#index', defaults: { format: :json }
         
   #Api definition
   namespace :api, defaults: { format: :json } do
   namespace :v1 do
-    #List of resources:
-    resources :users, only: [:show, :create, :destroy]
+  #List of resources:
+    resources :users, :only => [:show, :create, :update, :destroy]
     resources :robots, only: [ :index, :show, :update, :create, :destroy, :results ] do
       resources :weapons, only: [:show, :update, :create, :destroy ]
       resources :armors, only: [:show, :update, :create, :destroy ]
-      #resources :users, :only => [:show, :create, :update, :destroy]
+      
     end
   end
   end

@@ -8,13 +8,14 @@ This is a Rails JSON-API-only application capable of doing the following actions
 - Search Robots according to their attributes, weapons and armors.
 - Destroy a robot
 
-In this app I have used [Devise](https://github.com/plataformatec/devise) for authentification and [Pundit](https://github.com/varvet/pundit) for the authorization. It's been neccesary to create an API access token for the user with [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication) since the user session cannot be stored in a cookie. However, the registration and session is not finished yet because I need to add a new enpoint for registration but I need to revise some resources as I am not sure what I am missing. 
+In this app I have used [Devise](https://github.com/plataformatec/devise) for authentification and [Pundit](https://github.com/varvet/pundit) for the authorization, following some resources from my bootcamp. However I have experienced problems with the registration/login so I have realized this might not be the best solutions for API only applications. I will try to implement a different package in the future to manage this issue. I need to revise some resources as I am not sure what I am missing anyway. 
+In order to create an API access token for the user with [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication) since the user session cannot be stored in a cookie.
 
-I will be adding also some features as automatic generation of serial numbers for each model. 
+I will be adding also some more features as automatic generation of serial numbers for each model and hopefully some humor :) 
  
 ### Built With
 - [Ruby v.2.5.3](https://www.ruby-lang.org/en/)  
-- [Ruby on Rails v.5.2.3](https://rubyonrails.org/) - The web framework used to build the app 
+- [Ruby on Rails v.5.2.3](https://rubyonrails.org/) - The web framework used to build the app
 - [Docker](https://www.docker.com/) - Used to containerize the app
 - [Postgresql](https://www.postgresql.org/) - The database used to store the data
 
