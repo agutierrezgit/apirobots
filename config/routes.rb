@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-
-  devise_for :users, controllers: {
-    sessions: 'users/sessions'
-  }
-          
+      
     namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      root to: "robots#index"
+      resources :sessions, only: [:create, :destroy]
       resources :robots, only: [ :index, :show, :update, :create, :destroy, :results ] do
         resources :weapons, only: [:show, :update, :create, :destroy ]
         resources :armors, only: [:show, :update, :create, :destroy ]
