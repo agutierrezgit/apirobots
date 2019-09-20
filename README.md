@@ -25,6 +25,10 @@ I will be adding also some more features as automatic generation of serial numbe
 - [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication) - Used to manage authentification token for User Model
 - [PG Search]( https://github.com/Casecommons/pg_search) - Implement search for named scopes 
 
+### API documentation
+
+Postman documentation available [here](https://documenter.getpostman.com/view/8866325/SVmyQx2c?version=latest)
+
 ### Prerequisites
 
 What things you need to install the software and how to install them:

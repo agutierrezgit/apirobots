@@ -1,5 +1,11 @@
 class ApplicationController < ActionController::API
   before_action :authenticate_user!
+  
+  # Include this to format the response to json
+  respond_to :json
+  
+  #Include this module por rails-API
+  include ActionController::RequestForgeryProtection
   protect_from_forgery unless: -> { request.format.json? }
   
   #Authorization System Pundit
