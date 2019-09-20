@@ -1,5 +1,8 @@
 class ApplicationController < ActionController::API
+  # include ActionController::RequestForgeryProtection
+
   #Devise helpers to set up controller with user authentication
+  # protect_from_forgery unless: -> { request.format.json? }
   before_action :authenticate_user!
   
   #Authorization System Pundit
