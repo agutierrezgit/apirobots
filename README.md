@@ -56,7 +56,13 @@ docker-compose run web rails db:create
 docker-compose run web rails db:migrate
 ```
 
-#### 5. Boot the App
+#### 5. Run the seed
+
+```
+docker-compose run web rails db:seed
+```
+
+#### 6. Boot the App
 ```
 docker-compose up
 ```
