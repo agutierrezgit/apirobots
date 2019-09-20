@@ -1,0 +1,1 @@
+json.(@user, :id, :authentication_token)
