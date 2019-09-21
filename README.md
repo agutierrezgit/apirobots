@@ -8,7 +8,7 @@ This is a Rails JSON-API-only application capable of doing the following actions
 - Search Robots according to their attributes, weapons and armors.
 - Destroy a robot
 
-In this app I have used [Devise](https://github.com/plataformatec/devise) for authentification and [Pundit](https://github.com/varvet/pundit) for the authorization, following some resources from my bootcamp. However I have experienced problems with the registration/login responses as Devise doesn't support Rails --api applications out of the box, so I have realized this might not be the best solutions and I will try to use [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth) in a new version of this API.  
+In this app I have used [Devise](https://github.com/plataformatec/devise) for authentification and [Pundit](https://github.com/varvet/pundit) for authorization, following some resources from my bootcamp. However I have experienced problems with the registration/login responses as Devise doesn't support Rails --api applications out of the box, so I have realized this might not be the best solutions and I will try to use [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth) in a new version of this API.  
 
 In order to guarantee the authentification of the user I have used [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication)
 
@@ -18,7 +18,7 @@ I will be adding also some more features as automatic generation of serial numbe
 
 ### API documentation
 
-Postman documentation available [here](https://documenter.getpostman.com/view/8866325/SVmyQx2c?version=latest)
+Postman documentation available [here](https://documenter.getpostman.com/view/8866325/SVmyRd4t?version=latest)
  
 ### Built With
 - [Ruby v.2.5.3](https://www.ruby-lang.org/en/)  
