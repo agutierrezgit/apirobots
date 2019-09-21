@@ -3,7 +3,6 @@ class Api::V1::RobotsController < Api::V1::BaseController
   before_action :set_robot, only: [ :show, :update, :destroy]
   
   #GET /api/v1/robots or #GET /api/v1/query={query}  #unauthenticated
-
   def index
     if params[:query].present?
       @robots = policy_scope(Robot.custom_search(params[:query]))
