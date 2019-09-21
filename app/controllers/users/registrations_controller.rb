@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  respond_to :json
 
   # GET /resource/sign_up
   # def new
@@ -10,9 +9,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    build_resource(sign_up_params)
+
+    if resource.save
+      render json: resource
+    else
+      render_error
+    end
+  end
+
+  def render_error
+    render json: { errors: resource.errors.full_messages },
+    status: :unprocessable_entity
+  end
 
   # GET /resource/edit
   # def edit

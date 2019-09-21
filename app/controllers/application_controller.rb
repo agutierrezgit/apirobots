@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+  include ActionController::MimeResponds
   before_action :authenticate_user!
   
   # Include this to format the response to json
