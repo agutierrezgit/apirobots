@@ -14,7 +14,9 @@ In order to guarantee the authentification of the user I have used [Simple Token
 
 Please check it out and I would be very happy to get your thoughts. 
 
-I will be adding also some more features as automatic generation of serial numbers for each model and most likely some humor about robots :) 
+Here is the [API](https://pure-beyond-54411.herokuapp.com/api/v1/robots) running
+
+I will be adding also some more features as automatic generation of serial numbers for each model and most important, some humor about robots :) 
 
 ### API documentation
 
@@ -80,5 +82,5 @@ docker-compose up
 - [x] Update a robot's attributes, including (but not limited to) weapons and armors.
 - [x] Search Robots according to their attributes, weapons and armors.
 - [x] Destroy a robot.
-- [ ] Make API public.
+- [X] Make API public.
 - [x] Create a Readme.
