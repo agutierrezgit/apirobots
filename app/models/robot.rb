@@ -2,8 +2,8 @@ class Robot < ApplicationRecord
   
   #Associations
   belongs_to :user
-  has_many :weapons
-  has_many :armors
+  has_many :weapons, dependent: :destroy
+  has_many :armors, dependent: :destroy
 
   #Validations
   validates :name, presence: true, uniqueness: true

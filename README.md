@@ -8,11 +8,17 @@ This is a Rails JSON-API-only application capable of doing the following actions
 - Search Robots according to their attributes, weapons and armors.
 - Destroy a robot
 
-In this app I have used [Devise](https://github.com/plataformatec/devise) for authentification and [Pundit](https://github.com/varvet/pundit) for the authorization, following some resources from my bootcamp. However I have experienced problems with the registration/login so I have realized this might not be the best solutions for API only applications. Fortunately, it is working now, but I will try to implement a different package in the future to manage this issue. Also I need to revise some resources as I am not sure what what I was missing.  
+In this app I have used [Devise](https://github.com/plataformatec/devise) for authentification and [Pundit](https://github.com/varvet/pundit) for the authorization, following some resources from my bootcamp. However I have experienced problems with the registration/login responses as Devise doesn't support Rails --api applications out of the box, so I have realized this might not be the best solutions and I will try to use [devise_token_auth](https://github.com/lynndylanhurley/devise_token_auth) in a new version of this API.  
 
-In order to create an API access token for the user with [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication) since the user session cannot be stored in a cookie.
+In order to guarantee the authentification of the user I have used [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication)
 
-I will be adding also some more features as automatic generation of serial numbers for each model and hopefully some humor about robots :) 
+Please check it out and I would be very happy to get your thoughts. 
+
+I will be adding also some more features as automatic generation of serial numbers for each model and most likely some humor about robots :) 
+
+### API documentation
+
+Postman documentation available [here](https://documenter.getpostman.com/view/8866325/SVmyQx2c?version=latest)
  
 ### Built With
 - [Ruby v.2.5.3](https://www.ruby-lang.org/en/)  
@@ -25,10 +31,6 @@ I will be adding also some more features as automatic generation of serial numbe
 - [Pundit](https://github.com/varvet/pundit) - Pundit helps to make more robuts authorization system
 - [Simple Token Authentification](https://github.com/gonzalo-bulnes/simple_token_authentication) - Used to manage authentification token for User Model
 - [PG Search]( https://github.com/Casecommons/pg_search) - Implement search for named scopes 
-
-### API documentation
-
-Postman documentation available [here](https://documenter.getpostman.com/view/8866325/SVmyQx2c?version=latest)
 
 ### Prerequisites
 
