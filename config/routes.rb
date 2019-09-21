@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users, defaults: { format: :json }
+  #Set routes for devise
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        registrations: 'users/registrations'
+        },
+        defaults: { format: :json }
   
   # GET '/'
   root to: 'api/v1/robots#index', defaults: { format: :json }
